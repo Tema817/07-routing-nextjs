@@ -6,8 +6,12 @@ import {
 import { fetchNoteById } from "@/lib/api";
 import NotePreviewClient from "./NotePreview.client";
 
-export default async function NotePage({ params }: { params: { id: string } }) {
-  const { id } = params;
+interface NotePageProps {
+  params: Promise<{ id: string }>;
+}
+
+export default async function NotePage({ params }: NotePageProps) {
+  const { id } = await params;
 
   const queryClient = new QueryClient();
 
@@ -18,7 +22,7 @@ export default async function NotePage({ params }: { params: { id: string } }) {
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <NotePreviewClient />
+      <NotePreviewClient id={id}/>
     </HydrationBoundary>
   );
 }
