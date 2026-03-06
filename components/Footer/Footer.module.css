@@ -10,6 +10,7 @@
   border-radius: 4px;
   border-top: 2px solid #ff9000;
   background-color: #E6E6FA;
+  min-width: 320px;
 }
 
 .wrap {
