@@ -23,8 +23,8 @@ export default function Header() {
                     </li>
                     <li>
                         <Link
-                            href="/notes"
-                            className={pathname.startsWith("/notes") ? css.active : ""}>
+                            href="/notes/filter/all"
+                            className={pathname.startsWith("/notes/filter") ? css.active : ""}>
                             Notes
                         </Link>
                     </li>
